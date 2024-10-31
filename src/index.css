@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-[#010039];
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-white/5 transition-colors;
+  }
+  
+  .nav-link.active {
+    @apply bg-white/10;
+  }
+
+  .playlist-card {
+    @apply relative overflow-hidden rounded-xl;
+  }
+
+  .playlist-card img {
+    @apply w-full aspect-square object-cover transition-transform group-hover:scale-105;
+  }
+
+  .playlist-card .overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
